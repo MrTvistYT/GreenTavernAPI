@@ -1,0 +1,6 @@
+name: GreenTavernAPI
+version: '${project.version}'
+main: org.gt.greentavernapi.GreenTavernAPI
+api-version: '1.20'
+depend:
+  - ItemsAdder

@@ -1,0 +1,326 @@
+offset:
+  - char: '-'
+    offset: 6
+  - char: '_'
+    offset: 6
+  - char: ':'
+    offset: 2
+  - char: '/'
+    offset: 6
+  - char: '.'
+    offset: 2
+  - char: ','
+    offset: 2
+  - char: '"'
+    offset: 4
+  - char: '!'
+    offset: 2
+  - char: '?'
+    offset: 6
+  - char: '#'
+    offset: 6
+  - char: '$'
+    offset: 6
+  - char: '%'
+    offset: 6
+  - char: '&'
+    offset: 6
+  - char: '('
+    offset: 4
+  - char: ')'
+    offset: 4
+  - char: '*'
+    offset: 4
+  - char: '+'
+    offset: 6
+  - char: ';'
+    offset: 2
+  - char: '['
+    offset: 4
+  - char: ']'
+    offset: 4
+  - char: '\'
+    offset: 6
+  - char: '~'
+    offset: 7
+  - char: '^'
+    offset: 6
+  - char: '`'
+    offset: 3
+  - char: '{'
+    offset: 4
+  - char: '|'
+    offset: 2
+  - char: '}'
+    offset: 4
+
+
+  - char: 'A'
+    offset: 8
+  - char: 'B'
+    offset: 7
+  - char: 'C'
+    offset: 6
+  - char: 'D'
+    offset: 7
+  - char: 'E'
+    offset: 7
+  - char: 'F'
+    offset: 7
+  - char: 'G'
+    offset: 6
+  - char: 'H'
+    offset: 8
+  - char: 'I'
+    offset: 4
+  - char: 'J'
+    offset: 5
+  - char: 'K'
+    offset: 7
+  - char: 'L'
+    offset: 6
+  - char: 'M'
+    offset: 8
+  - char: 'N'
+    offset: 8
+  - char: 'O'
+    offset: 6
+  - char: 'P'
+    offset: 7
+  - char: 'Q'
+    offset: 7
+  - char: 'R'
+    offset: 7
+  - char: 'S'
+    offset: 6
+  - char: 'T'
+    offset: 6
+  - char: 'U'
+    offset: 9
+  - char: 'V'
+    offset: 8
+  - char: 'W'
+    offset: 9
+  - char: 'X'
+    offset: 8
+  - char: 'Y'
+    offset: 8
+  - char: 'Z'
+    offset: 6
+
+
+
+  - char: 'a'
+    offset: 6
+  - char: 'b'
+    offset: 5
+  - char: 'c'
+    offset: 5
+  - char: 'd'
+    offset: 6
+  - char: 'e'
+    offset: 5
+  - char: 'f'
+    offset: 4
+  - char: 'g'
+    offset: 6
+  - char: 'h'
+    offset: 5
+  - char: 'i'
+    offset: 2
+  - char: 'j'
+    offset: 4
+  - char: 'k'
+    offset: 5
+  - char: 'l'
+    offset: 2
+  - char: 'm'
+    offset: 6
+  - char: 'n'
+    offset: 5
+  - char: 'o'
+    offset: 5
+  - char: 'p'
+    offset: 5
+  - char: 'q'
+    offset: 5
+  - char: 'r'
+    offset: 4
+  - char: 's'
+    offset: 5
+  - char: 't'
+    offset: 3
+  - char: 'u'
+    offset: 5
+  - char: 'v'
+    offset: 6
+  - char: 'w'
+    offset: 8
+  - char: 'x'
+    offset: 6
+  - char: 'y'
+    offset: 5
+  - char: 'z'
+    offset: 5
+
+
+
+  - char: '0'
+    offset: 6
+  - char: '1'
+    offset: 4
+  - char: '2'
+    offset: 6
+  - char: '3'
+    offset: 6
+  - char: '4'
+    offset: 6
+  - char: '5'
+    offset: 6
+  - char: '6'
+    offset: 6
+  - char: '7'
+    offset: 6
+  - char: '8'
+    offset: 6
+  - char: '9'
+    offset: 6
+
+
+
+
+  - char: 'А'
+    offset: 8
+  - char: 'а'
+    offset: 6
+  - char: 'Б'
+    offset: 7
+  - char: 'б'
+    offset: 5
+  - char: 'В'
+    offset: 7
+  - char: 'в'
+    offset: 5
+  - char: 'Г'
+    offset: 6
+  - char: 'г'
+    offset: 4
+  - char: 'Д'
+    offset: 7
+  - char: 'д'
+    offset: 6
+  - char: 'Е'
+    offset: 7
+  - char: 'е'
+    offset: 5
+  - char: 'Ё'
+    offset: 7
+  - char: 'ё'
+    offset: 5
+  - char: 'Ж'
+    offset: 9
+  - char: 'ж'
+    offset: 6
+  - char: 'З'
+    offset: 6
+  - char: 'з'
+    offset: 5
+  - char: 'И'
+    offset: 8
+  - char: 'и'
+    offset: 5
+  - char: 'Й'
+    offset: 6
+  - char: 'й'
+    offset: 5
+  - char: 'К'
+    offset: 7
+  - char: 'к'
+    offset: 5
+  - char: 'Л'
+    offset: 7
+  - char: 'л'
+    offset: 5
+  - char: 'М'
+    offset: 8
+  - char: 'м'
+    offset: 6
+  - char: 'Н'
+    offset: 8
+  - char: 'н'
+    offset: 5
+  - char: 'О'
+    offset: 6
+  - char: 'о'
+    offset: 5
+  - char: 'П'
+    offset: 8
+  - char: 'п'
+    offset: 5
+  - char: 'Р'
+    offset: 7
+  - char: 'р'
+    offset: 5
+  - char: 'С'
+    offset: 6
+  - char: 'с'
+    offset: 5
+  - char: 'Т'
+    offset: 6
+  - char: 'т'
+    offset: 6
+  - char: 'У'
+    offset: 8
+  - char: 'у'
+    offset: 4
+  - char: 'Ф'
+    offset: 8
+  - char: 'ф'
+    offset: 6
+  - char: 'Х'
+    offset: 8
+  - char: 'х'
+    offset: 6
+  - char: 'Ц'
+    offset: 8
+  - char: 'ц'
+    offset: 5
+  - char: 'Ч'
+    offset: 7
+  - char: 'ч'
+    offset: 5
+  - char: 'Ш'
+    offset: 8
+  - char: 'ш'
+    offset: 6
+  - char: 'Щ'
+    offset: 9
+  - char: 'щ'
+    offset: 7
+  - char: 'Ъ'
+    offset: 7
+  - char: 'ъ'
+    offset: 6
+  - char: 'Ы'
+    offset: 8
+  - char: 'ы'
+    offset: 6
+  - char: 'Ь'
+    offset: 6
+  - char: 'ь'
+    offset: 5
+  - char: 'Э'
+    offset: 6
+  - char: 'э'
+    offset: 5
+  - char: 'Ю'
+    offset: 9
+  - char: 'ю'
+    offset: 7
+  - char: 'Я'
+    offset: 7
+  - char: 'я'
+    offset: 5
+
+  - char: ' '
+    offset: 4
