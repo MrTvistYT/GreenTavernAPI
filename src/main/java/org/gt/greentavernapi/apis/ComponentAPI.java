@@ -19,7 +19,7 @@ public class ComponentAPI {
     private static final Map<Character, Integer> offsetMap = new HashMap<>();
     private static File translateFile;
 
-    enum Align{
+    public enum Align{
         LEFT,
         CENTER,
         RIGHT
