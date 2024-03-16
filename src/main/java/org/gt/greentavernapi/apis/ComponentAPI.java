@@ -28,7 +28,6 @@ public class ComponentAPI {
 
     public ComponentAPI(File translateFile, File offsetFile){
         ComponentAPI.translateFile = translateFile;
-        new FontImageWrapper("").getWidth();
         try {
             Yaml yaml = new Yaml();
             FileInputStream inputStream = new FileInputStream(offsetFile);
@@ -117,7 +116,7 @@ public class ComponentAPI {
                 space = (image.getWidth() + 1) - 8;
                 break;
             case CENTER:
-                space = (((image.getWidth() + 1) - text_size) / 2) + text_size;
+                space = (((174 + 1) - text_size) / 2) + text_size;
                 break;
             case RIGHT:
                 space = BORDER_OFFSET + text_size;

@@ -32,4 +32,7 @@ public class NamespaceManager {
     public static NamespacedKey SHOP_ITEM_PRICE = new NamespacedKey("shop", "shop_price_uuid");
     public static NamespacedKey SHOP_ITEM_AMOUNT = new NamespacedKey("shop", "shop_amount_uuid");
     public static NamespacedKey SHOP_TYPE = new NamespacedKey("shop", "shop_type");
+    public static NamespacedKey SHOP_VIEWERS = new NamespacedKey("shop", "shop_viewers");
+
+
 }
