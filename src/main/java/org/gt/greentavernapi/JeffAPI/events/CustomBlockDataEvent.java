@@ -9,7 +9,7 @@ import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.world.StructureGrowEvent;
 import org.bukkit.plugin.Plugin;
-import org.gt.shopgt.JeffAPI.CustomBlockData;
+import org.gt.greentavernapi.JeffAPI.CustomBlockData;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
