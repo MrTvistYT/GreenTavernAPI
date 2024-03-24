@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GreenTavernAPI:jar">
+    <output-path>$PROJECT_DIR$/../../GreenTavern/kingdoms/plugins</output-path>
+    <root id="archive" name="GreenTavernAPI.jar">
+      <element id="module-output" name="GreenTavernAPI" />
+    </root>
+  </artifact>
+</component>
