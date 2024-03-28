@@ -42,4 +42,5 @@ public class NamespaceManager {
     public static NamespacedKey STAGE = new NamespacedKey("crops", "stage");
     public static NamespacedKey FRUIT_TYPE = new NamespacedKey("crops", "fruit_type");
     public static NamespacedKey SEED_TYPE = new NamespacedKey("crops", "seed_type");
+    public static NamespacedKey IS_FRUIT_UP = new NamespacedKey("crops", "is_fruit_up");
 }
