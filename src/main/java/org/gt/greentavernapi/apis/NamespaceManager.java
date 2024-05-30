@@ -9,6 +9,7 @@ public class NamespaceManager {
     public static NamespacedKey KINGDOMS_RIGHT = new NamespacedKey("kingdoms", "right");
     public static NamespacedKey KINGDOMS_INTERACTION_SIDE = new NamespacedKey("kingdoms", "side");
 
+
     public static NamespacedKey GUI_PAGE_INDEX = new NamespacedKey("gui", "page_index");
     public static NamespacedKey GUI_TYPE = new NamespacedKey("gui", "gui_type");
 
@@ -43,4 +44,6 @@ public class NamespaceManager {
     public static NamespacedKey FRUIT_TYPE = new NamespacedKey("crops", "fruit_type");
     public static NamespacedKey SEED_TYPE = new NamespacedKey("crops", "seed_type");
     public static NamespacedKey IS_FRUIT_UP = new NamespacedKey("crops", "is_fruit_up");
+
+    public static NamespacedKey SHOW_VERSION = new NamespacedKey("show", "version");
 }

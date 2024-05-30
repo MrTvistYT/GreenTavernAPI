@@ -4,3 +4,19 @@ main: org.gt.greentavernapi.GreenTavernAPI
 api-version: '1.20'
 depend:
   - ItemsAdder
+  - PlaceholderAPI
+commands:
+  me:
+    description: "При вводе комманды отображается: <ник игрока> <действие>"
+  do:
+    description: "При вводе комманды отображается: <ник игрока> <действие>"
+  todo:
+    description: "При вводе комманды отображается: * <ник игрока> <действие> сказав <сообщение>"
+  try:
+    description: "При вводе комманды отображается: * <ник игрока> попытался <действие>"
+  b:
+    description: "При вводе комманды отображается: * <ник игрока> попытался <действие>"
+
+  gtvtp:
+    description: "teleport player to location"
+    permission: gtvtp.teleport

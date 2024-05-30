@@ -1,10 +1,11 @@
-package org.gt.greentavernapi;
+package org.gt.greentavernapi.addons;
 
 import dev.lone.itemsadder.api.FontImages.FontImageWrapper;
 import io.papermc.paper.event.player.ChatEvent;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Display;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -18,15 +19,21 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.event.world.EntitiesLoadEvent;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.util.Transformation;
 import org.gt.greentavernapi.GreenTavernAPI;
 import org.gt.greentavernapi.apis.ComponentAPI;
+import org.gt.greentavernapi.apis.NamespaceManager;
 import org.joml.Vector3f;
 
 import java.util.*;
 
-public class ShowablePlugin implements Listener {
-    GreenTavernAPI gtAPI;
+public class Showers implements Listener {
+    final GreenTavernAPI gtAPI;
+    final int prevVersion;
+
 
     Map<Player, TextDisplay> ownerHeart = new HashMap<>();
     Map<Player, List<TextDisplay>> ownerMessage = new HashMap<>();
@@ -35,7 +42,9 @@ public class ShowablePlugin implements Listener {
     Map<Player, Player> playerClickOwner = new HashMap<>();
     Map<Player, Long> timeToRemove = new HashMap<>();
 
-    public ShowablePlugin(GreenTavernAPI gtAPI){
+    public Showers(FileConfiguration config, GreenTavernAPI gtAPI){
+        this.prevVersion = config.getInt("showers.version");
+        config.set("showers.version", prevVersion + 1);
         this.gtAPI = gtAPI;
     }
 
@@ -75,6 +84,18 @@ public class ShowablePlugin implements Listener {
         }, 20L, 20L);
     }
 
+
+    @EventHandler
+    public void load(EntitiesLoadEvent event){
+        for(Entity entity : event.getEntities()) {
+            if(entity == null) continue;
+            PersistentDataContainer pdc = entity.getPersistentDataContainer();
+            if(!pdc.has(NamespaceManager.SHOW_VERSION)) continue;
+            if (prevVersion == pdc.get(NamespaceManager.SHOW_VERSION, PersistentDataType.INTEGER)) {
+                entity.remove();
+            }
+        }
+    }
     @EventHandler
     public void playerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
@@ -82,11 +103,14 @@ public class ShowablePlugin implements Listener {
         TextDisplay hearts = player.getWorld().spawn(player.getLocation(), TextDisplay.class, d -> {
             player.addPassenger(d);
 
+            d.setRotation(0,90);
             d.setBackgroundColor(Color.fromARGB(0));
             d.setTransformation(new Transformation(new Vector3f(0f, -0.05f, 0f),
                     d.getTransformation().getLeftRotation(),
                     new Vector3f(0.5f, 0.5f, 0.5f),
                     d.getTransformation().getRightRotation()));
+
+            d.getPersistentDataContainer().set(NamespaceManager.SHOW_VERSION, PersistentDataType.INTEGER,prevVersion + 1);
 
             d.setVisibleByDefault(false);
             d.setBillboard(Display.Billboard.CENTER);
@@ -105,7 +129,6 @@ public class ShowablePlugin implements Listener {
         ownerMessage.get(player).get(0).text(Component.empty());
         ownerMessage.get(player).get(1).text(Component.empty());
     }
-
     @EventHandler
     public void playerRespawn(PlayerRespawnEvent event){
         Player player = event.getPlayer();
@@ -115,7 +138,6 @@ public class ShowablePlugin implements Listener {
         player.addPassenger(ownerMessage.get(player).get(1));
         ownerHeart.get(player).text(getHearts(player));
     }
-
     @EventHandler
     public void leave(PlayerQuitEvent event) {
         Player player = event.getPlayer();
@@ -129,7 +151,6 @@ public class ShowablePlugin implements Listener {
         ownerMessage.remove(player);
         ownerMessageTime.remove(player);
     }
-
     @EventHandler
     public void chat(ChatEvent event){
         createMessage(event.getPlayer(), event.message());
@@ -255,6 +276,8 @@ public class ShowablePlugin implements Listener {
                     d.getTransformation().getLeftRotation(),
                     new Vector3f(0,0,0),
                     d.getTransformation().getRightRotation()));
+            d.setRotation(0, -90);
+            d.getPersistentDataContainer().set(NamespaceManager.SHOW_VERSION, PersistentDataType.INTEGER,prevVersion + 1);
             d.setBillboard(Display.Billboard.CENTER);
         });
         TextDisplay t2 = player.getWorld().spawn(player.getLocation(), TextDisplay.class, d -> {
@@ -263,6 +286,8 @@ public class ShowablePlugin implements Listener {
                     d.getTransformation().getLeftRotation(),
                     new Vector3f(0,0,0),
                     d.getTransformation().getRightRotation()));
+            d.setRotation(0, -90);
+            d.getPersistentDataContainer().set(NamespaceManager.SHOW_VERSION, PersistentDataType.INTEGER,prevVersion + 1);
             d.setBillboard(Display.Billboard.CENTER);
         });
 

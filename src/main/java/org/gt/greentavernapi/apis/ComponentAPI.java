@@ -5,6 +5,7 @@ import dev.lone.itemsadder.api.FontImages.FontImageWrapper;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -78,7 +79,7 @@ public class ComponentAPI {
     }
 
 
-    private static int getOffset(String string){
+    public static int getOffset(String string){
         int result = 0;
         for(char ch : string.toCharArray()){
             result += offsetMap.getOrDefault(ch, 9);
@@ -131,7 +132,9 @@ public class ComponentAPI {
     public static String componentToString(Component component){
         return PlainTextComponentSerializer.plainText().serialize(component);
     }
-
+    public static Component miniMessage(String string){
+        return MiniMessage.miniMessage().deserialize(string);
+    }
 
 
 

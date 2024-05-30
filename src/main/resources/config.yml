@@ -1,0 +1,24 @@
+plugin_server: kingdoms
+
+showers:
+  version: 0
+
+chatty:
+  local: "<color:#FF55FF>Ⓛ</color> {prefix} {player} : {message}"
+  global: "<color:#FFAA00>Ⓖ</color> {prefix} {player} : {message}"
+  trade: "<color:#FFAA00>Ⓒ</color> {prefix} {player} : {message}"
+  support: "<color:#00AA00>Ⓗ</color> {prefix} {player} : {message}"
+  donate: "<color:#2FAFF4>Ⓓ</color> {prefix} {player} : {message}"
+  admin: "<color:#2F80F4>Ⓢ</color> {prefix} {player} : {message}"
+
+  local_distance: 100
+
+rp_commands:
+  me: "<darkgreen> * {player} {message} </darkgreen>"
+  do: "<darkgreen> {player} {message} </darkgreen>"
+  try:
+    msg: "<darkgreen> {player} </darkgreen> <gray> {message} | </gray> "
+    true: "<darkgreen> Удачно </darkgreen>"
+    false: "<darkred> Неудачно </darkred>"
+  b: "<gray>(</gray> <darkgreen> {player} </darkgreen> <gray> : </gray> {message} <gray>)</gray>"
+  todo: "<white>\"{msg}\",</white><dark_green> - сказал(-а) {player}, {action}</dark_green>"

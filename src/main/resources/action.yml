@@ -1,0 +1,7 @@
+priorities:
+  - type: MONEY
+    priority: 0
+  - type: MUSIC
+    priority: 1
+  - type: TELEPORT
+    priority: 2

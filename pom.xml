@@ -16,30 +16,58 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <profiles>
+    <profile>
+        <id>export-to-test-server</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <configuration>
+                        <outputDirectory>C:\GreenTavern\kingdoms\plugins</outputDirectory>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+  </profiles>
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.4</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.2.4</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <artifactSet>
+                            <excludes>
+                                <exclude>com.github.YiC200333:XConomyAPI</exclude>
+                                <exclude>com.github.LoneDev6:api-itemsadder</exclude>
+                                <exclude>me.clip:placeholderapi</exclude>
+                                <exclude>net.luckperms:api</exclude>
+                                <exclude>io.papermc.paper:paper-api</exclude>
+                                <exclude>me.neznamy:tab-api</exclude>
+                            </excludes>
+                        </artifactSet>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-compiler-plugin</artifactId>
+           <version>3.8.1</version>
+           <configuration>
+             <source>${java.version}</source>
+             <target>${java.version}</target>
+           </configuration>
+        </plugin>
     </plugins>
     <resources>
       <resource>
@@ -48,6 +76,8 @@
       </resource>
     </resources>
   </build>
+
+
 
   <repositories>
       <repository>
@@ -66,6 +96,10 @@
           <id>krypton</id>
           <url>https://repo.kryptonmc.org/releases</url>
       </repository>
+      <repository>
+          <id>placeholderapi</id>
+          <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+      </repository>
   </repositories>
 
   <dependencies>
@@ -81,17 +115,39 @@
           <version>3.6.1</version>
           <scope>provided</scope>
       </dependency>
-<!--      <dependency>-->
-<!--          <groupId>com.github.YiC200333</groupId>-->
-<!--          <artifactId>XConomyAPI</artifactId>-->
-<!--          <version>2.21.4</version>-->
-<!--          <scope>provided</scope>-->
-<!--      </dependency>-->
+      <dependency>
+          <groupId>com.github.YiC200333</groupId>
+          <artifactId>XConomyAPI</artifactId>
+          <version>2.25.1</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>net.luckperms</groupId>
+          <artifactId>api</artifactId>
+          <version>5.4</version>
+          <scope>provided</scope>
+      </dependency>
       <dependency>
           <groupId>me.neznamy</groupId>
           <artifactId>tab-api</artifactId>
           <version>4.0.2</version>
           <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>me.clip</groupId>
+          <artifactId>placeholderapi</artifactId>
+          <version>2.11.4</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.redisson</groupId>
+          <artifactId>redisson</artifactId>
+          <version>3.28.0</version>
+      </dependency>
+      <dependency>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-all</artifactId>
+          <version>4.1.108.Final</version>
       </dependency>
   </dependencies>
 </project>
